@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# rembg cutout cache (regenerated on demand from assets/)
+characters/*.png
+
+# local rembg model store, if placed in-repo
+.rembg/
+*.onnx
