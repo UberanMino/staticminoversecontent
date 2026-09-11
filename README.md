@@ -102,7 +102,9 @@ resolution-independent.
 **Layer options:** `x`, `y`, `scale` (fractions of the canvas), `rot`,
 `opacity`, `blur`, `flip`, `saturation`, `aberration`, `crop` (`[l,t,r,b]`
 fractions — use it to keep only a head for a painting swap), `fade_bottom`
-(dissolve a head-swap seam), `model` (rembg model, e.g. `u2net_human_seg`).
+(dissolve a head-swap seam), `head_pos` (`[x, y]` fractions — aligns the
+character's head with the painting's head; omit `x`, `y` when using this),
+`model` (rembg model, e.g. `u2net_human_seg`).
 
 **Backgrounds:** `mandelbrot`, `julia`, `nebula`, `plasma` (each takes a
 `palette` from `amber`, `acid`, `vapor`, `ember`, `cosmic`, `toxic`), and
