@@ -31,6 +31,8 @@ class Layer:
                                   # e.g. head-only for a painting head-swap
     fade_bottom: float = 0.0      # fraction of height to fade to transparent at
                                   # the bottom (dissolves a head-swap seam)
+    head_pos: tuple | None = None # (x, y) fractions on canvas where painting's head
+                                  # is located; if set, character head aligns with it
 
 
 @dataclass
@@ -89,8 +91,16 @@ class Scene:
             a = fig.getchannel("A").point(lambda p: int(p * layer.opacity))
             fig.putalpha(a)
 
-        cx, cy = int(self.width * layer.x), int(self.height * layer.y)
-        canvas.alpha_composite(fig, (cx - fig.width // 2, cy - fig.height // 2))
+        if layer.head_pos:
+            head_x = int(self.width * layer.head_pos[0])
+            head_y = int(self.height * layer.head_pos[1])
+            ox = head_x - fig.width // 2
+            oy = head_y
+        else:
+            cx, cy = int(self.width * layer.x), int(self.height * layer.y)
+            ox = cx - fig.width // 2
+            oy = cy - fig.height // 2
+        canvas.alpha_composite(fig, (ox, oy))
 
     def render(self) -> Image.Image:
         bg = backgrounds.make(self.bg, self.width, self.height, **self.bg_kw)

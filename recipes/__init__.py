@@ -100,8 +100,9 @@ RECIPES = {
         "glyph_count": 4,
         "seed": 6,
         "layers": [
-            {"src": f"{S}/Uberan Mino (2).png", "x": 0.515, "y": 0.32, "scale": 0.29,
-             "crop": [0.02, 0.0, 0.80, 0.4], "fade_bottom": 0.4},
+            {"src": f"{S}/Uberan Mino (2).png", "scale": 0.29,
+             "crop": [0.02, 0.0, 0.80, 0.4], "fade_bottom": 0.4,
+             "head_pos": [0.50, 0.32]},
         ],
     },
 
@@ -117,8 +118,9 @@ RECIPES = {
         "glyph_count": 4,
         "seed": 2,
         "layers": [
-            {"src": f"{S}/chicken guy.png", "x": 0.5, "y": 0.46, "scale": 0.26,
-             "crop": [0.12, 0.0, 0.95, 0.4], "fade_bottom": 0.35, "rot": -4},
+            {"src": f"{S}/chicken guy.png", "scale": 0.26,
+             "crop": [0.12, 0.0, 0.95, 0.4], "fade_bottom": 0.35, "rot": -4,
+             "head_pos": [0.50, 0.35]},
         ],
     },
 
